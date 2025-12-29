@@ -18,7 +18,7 @@ property headers : Object
 property event : cs:C1710.event.event
 property agent : Object
 
-Class constructor($that : cs:C1710._Model; \
+Class constructor($that : Object; \
 $file : 4D:C1709.File; \
 $folder : 4D:C1709.Folder; \
 $oid : Text; \
@@ -53,11 +53,11 @@ $onDownload : 4D:C1709.Function)
 	This:C1470.options.onTerminate:=This:C1470.event.onTerminate
 	This:C1470.options.onStdErr:=This:C1470.event.onStdErr
 	This:C1470.options.onStdOut:=This:C1470.event.onStdOut
-	
+	//%W-550.4
 	If (OB Instance of:C1731(4D:C1709.HTTPAgent; 4D:C1709.Class))
 		This:C1470.agent:=4D:C1709.HTTPAgent.new({keepAlive: False:C215})
 	End if 
-	
+	//%W+550.4
 Function head()
 	
 	This:C1470.method:="HEAD"
@@ -98,7 +98,7 @@ Function onData($request : 4D:C1709.HTTPRequest; $event : Object)
 			This:C1470.range.end:=This:C1470._fileHandle.getSize()
 			This:C1470.range.length:=Num:C11($request.response.headers["content-length"])
 		End if 
-		If (This:C1470.event#Null:C1517) && (OB Instance of:C1731(This:C1470.event; cs:C1710.event.event))
+		If (This:C1470.event#Null:C1517) && (OB Instance of:C1731(This:C1470.event; cs:C1710.event))
 			This:C1470.event.onData.call(This:C1470; $request; $event)
 		End if 
 	End if 
@@ -123,7 +123,7 @@ Function onResponse($request : 4D:C1709.HTTPRequest; $event : Object)
 		: (Not:C34(This:C1470.range.ranges))  //simple get
 			If ($request.response.status=200)
 				This:C1470._fileHandle:=Null:C1517
-				If (This:C1470.event#Null:C1517) && (OB Instance of:C1731(This:C1470.event; cs:C1710.event.event))
+				If (This:C1470.event#Null:C1517) && (OB Instance of:C1731(This:C1470.event; cs:C1710.event))
 					This:C1470.event.onResponse.call(This:C1470; $request; $event)
 				End if 
 				This:C1470.onDownload.call(This:C1470.that; This:C1470.oid)
@@ -140,7 +140,7 @@ Function onResponse($request : 4D:C1709.HTTPRequest; $event : Object)
 					4D:C1709.HTTPRequest.new(This:C1470.URL; This:C1470)
 				Else 
 					This:C1470._fileHandle:=Null:C1517
-					If (This:C1470.event#Null:C1517) && (OB Instance of:C1731(This:C1470.event; cs:C1710.event.event))
+					If (This:C1470.event#Null:C1517) && (OB Instance of:C1731(This:C1470.event; cs:C1710.event))
 						This:C1470.event.onResponse.call(This:C1470; $request; $event)
 					End if 
 					This:C1470.onDownload.call(This:C1470.that; This:C1470.oid)
