@@ -43,7 +43,7 @@ $onDownload : 4D:C1709.Function)
 	This:C1470.returnResponseBody:=False:C215
 	This:C1470.decodeData:=False:C215
 	This:C1470.headers:={Accept: "application/vnd.github+json"}
-	ALERT:C41(JSON Stringify:C1217($options))
+	
 	If (Value type:C1509($options.HF_TOKEN)=Is text:K8:3) && ($options.HF_TOKEN#"")
 		This:C1470.headers.Authorization:="Bearer "+$options.HF_TOKEN
 	End if 
