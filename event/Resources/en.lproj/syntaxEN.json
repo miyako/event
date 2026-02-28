@@ -1,0 +1,447 @@
+{
+	"_method_": {},
+	"cs.event": {
+		"event": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"models": {
+			"new()": {
+				"Syntax": "**.new**( *models* : Collection )",
+				"Params": [
+					[
+						"models",
+						"Collection",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"download": {
+			"new()": {
+				"Syntax": "**.new**( *that* : Object; *file* : 4D.File; *folder* : 4D.Folder; *oid* : Text; *URL* : Text; *options* : Object; *formula* : 4D.Function; *event* : cs.event.event; *onDownload* : 4D.Function )",
+				"Params": [
+					[
+						"that",
+						"Object",
+						"->"
+					],
+					[
+						"file",
+						"4D.File",
+						"->"
+					],
+					[
+						"folder",
+						"4D.Folder",
+						"->"
+					],
+					[
+						"oid",
+						"Text",
+						"->"
+					],
+					[
+						"URL",
+						"Text",
+						"->"
+					],
+					[
+						"options",
+						"Object",
+						"->"
+					],
+					[
+						"formula",
+						"4D.Function",
+						"->"
+					],
+					[
+						"event",
+						"cs.event.event",
+						"->"
+					],
+					[
+						"onDownload",
+						"4D.Function",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"huggingfaces": {
+			"new()": {
+				"Syntax": "**.new**( *huggingfaces* : Collection )",
+				"Params": [
+					[
+						"huggingfaces",
+						"Collection",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"error": {
+			"new()": {
+				"Syntax": "**.new**( *code* : Integer; *message* : Text; *models* : cs.event.models )",
+				"Params": [
+					[
+						"code",
+						"Integer",
+						"->"
+					],
+					[
+						"message",
+						"Text",
+						"->"
+					],
+					[
+						"models",
+						"cs.event.models",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"huggingface": {
+			"new()": {
+				"Syntax": "**.new**( *model* : Object; *URL* : Text; *path* : Text; *domain* : Text; *name* : Text )",
+				"Params": [
+					[
+						"model",
+						"Object",
+						"->"
+					],
+					[
+						"URL",
+						"Text",
+						"->"
+					],
+					[
+						"path",
+						"Text",
+						"->"
+					],
+					[
+						"domain",
+						"Text",
+						"->"
+					],
+					[
+						"name",
+						"Text",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"model": {
+			"new()": {
+				"Syntax": "**.new**( *name* : Text; *isHuggingFace* : Boolean )",
+				"Params": [
+					[
+						"name",
+						"Text",
+						"->"
+					],
+					[
+						"isHuggingFace",
+						"Boolean",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		}
+	},
+	"event": {
+		"onStdErr()": {
+			"Syntax": "**.onStdErr**( *worker* : 4D.SystemWorker; *params* : Object )",
+			"Params": [
+				[
+					"worker",
+					"4D.SystemWorker",
+					"->"
+				],
+				[
+					"params",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"onStdOut()": {
+			"Syntax": "**.onStdOut**( *worker* : 4D.SystemWorker; *params* : Object )",
+			"Params": [
+				[
+					"worker",
+					"4D.SystemWorker",
+					"->"
+				],
+				[
+					"params",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"onTerminate()": {
+			"Syntax": "**.onTerminate**( *worker* : 4D.SystemWorker; *params* : Object )",
+			"Params": [
+				[
+					"worker",
+					"4D.SystemWorker",
+					"->"
+				],
+				[
+					"params",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"onError()": {
+			"Syntax": "**.onError**( *params* : Object; *error* : cs.event.error )",
+			"Params": [
+				[
+					"params",
+					"Object",
+					"->"
+				],
+				[
+					"error",
+					"cs.event.error",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"onResponse()": {
+			"Syntax": "**.onResponse**( *request* : 4D.HTTPRequest; *event* : Object )",
+			"Params": [
+				[
+					"request",
+					"4D.HTTPRequest",
+					"->"
+				],
+				[
+					"event",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"onData()": {
+			"Syntax": "**.onData**( *request* : 4D.HTTPRequest; *event* : Object )",
+			"Params": [
+				[
+					"request",
+					"4D.HTTPRequest",
+					"->"
+				],
+				[
+					"event",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"onSuccess()": {
+			"Syntax": "**.onSuccess**( *params* : Object; *models* : cs.event.models )",
+			"Params": [
+				[
+					"params",
+					"Object",
+					"->"
+				],
+				[
+					"models",
+					"cs.event.models",
+					"->"
+				]
+			],
+			"Summary": ""
+		}
+	},
+	"models": {
+		"models": {
+			"Syntax": "models : Collection"
+		}
+	},
+	"download": {
+		"onTerminate()": {
+			"Syntax": "**.onTerminate**( *request* : 4D.HTTPRequest; *event* : Object )",
+			"Params": [
+				[
+					"request",
+					"4D.HTTPRequest",
+					"->"
+				],
+				[
+					"event",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"onResponse()": {
+			"Syntax": "**.onResponse**( *request* : 4D.HTTPRequest; *event* : Object )",
+			"Params": [
+				[
+					"request",
+					"4D.HTTPRequest",
+					"->"
+				],
+				[
+					"event",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"onError()": {
+			"Syntax": "**.onError**( *request* : 4D.HTTPRequest; *event* : Object )",
+			"Params": [
+				[
+					"request",
+					"4D.HTTPRequest",
+					"->"
+				],
+				[
+					"event",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"onData()": {
+			"Syntax": "**.onData**( *request* : 4D.HTTPRequest; *event* : Object )",
+			"Params": [
+				[
+					"request",
+					"4D.HTTPRequest",
+					"->"
+				],
+				[
+					"event",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"head()": {
+			"Syntax": "**.head**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"agent": {
+			"Syntax": "agent : Object"
+		},
+		"decodeData": {
+			"Syntax": "decodeData : Boolean"
+		},
+		"method": {
+			"Syntax": "method : Text"
+		},
+		"returnResponseBody": {
+			"Syntax": "returnResponseBody : Boolean"
+		},
+		"options": {
+			"Syntax": "options : Object"
+		},
+		"bufferSize": {
+			"Syntax": "bufferSize : Integer"
+		},
+		"onDownload": {
+			"Syntax": "onDownload : 4D.Function"
+		},
+		"range": {
+			"Syntax": "range : Object"
+		},
+		"headers": {
+			"Syntax": "headers : Object"
+		},
+		"automaticRedirections": {
+			"Syntax": "automaticRedirections : Boolean"
+		},
+		"oid": {
+			"Syntax": "oid : Text"
+		},
+		"event": {
+			"Syntax": "event : cs.event.event"
+		},
+		"URL": {
+			"Syntax": "URL : Text"
+		},
+		"folder": {
+			"Syntax": "folder : 4D.Folder"
+		},
+		"file": {
+			"Syntax": "file : 4D.File"
+		},
+		"dataType": {
+			"Syntax": "dataType : Text"
+		},
+		"that": {
+			"Syntax": "that : cs.event._Model"
+		}
+	},
+	"huggingfaces": {
+		"huggingfaces": {
+			"Syntax": "huggingfaces : Collection"
+		}
+	},
+	"error": {
+		"models": {
+			"Syntax": "models : Collection"
+		},
+		"code": {
+			"Syntax": "code : Integer"
+		},
+		"message": {
+			"Syntax": "message : Text"
+		}
+	},
+	"huggingface": {
+		"path": {
+			"Syntax": "path : Text"
+		},
+		"name": {
+			"Syntax": "name : Text"
+		},
+		"URL": {
+			"Syntax": "URL : Text"
+		},
+		"domain": {
+			"Syntax": "domain : Text"
+		},
+		"folder": {
+			"Syntax": "folder : Object"
+		}
+	},
+	"model": {
+		"isHuggingFace": {
+			"Syntax": "isHuggingFace : Boolean"
+		},
+		"name": {
+			"Syntax": "name : Text"
+		}
+	}
+}

@@ -77,6 +77,13 @@ Function head()
 		If (Value type:C1509($request.response.headers["accept-ranges"])=Is text:K8:3) && \
 			($request.response.headers["accept-ranges"]="bytes")
 			This:C1470.range.length:=Num:C11($request.response.headers["content-length"])
+			If (This:C1470.file.exists)
+				If (This:C1470.file.size#This:C1470.range.length)
+					This:C1470.file.delete()
+				Else 
+					This:C1470._onResponse.call(This:C1470; {success: False:C215}; This:C1470.options)
+				End if 
+			End if 
 		End if 
 		This:C1470._fileHandle:=This:C1470.file.open("write")
 		If (This:C1470.range.length#0)
