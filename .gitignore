@@ -2,3 +2,4 @@ event/Data/data.Match
 event/Data/data.4DD
 event/userPreferences.*
 event/Project/DerivedData/*
+event/Project/DerivedData/methodAttributes.json
