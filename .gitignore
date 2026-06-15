@@ -3,3 +3,5 @@ event/Data/data.4DD
 event/userPreferences.*
 event/Project/DerivedData/*
 event/Project/DerivedData/methodAttributes.json
+event/Data/data.journal
+event/Project/Sources/dependencies.json
