@@ -54,9 +54,11 @@ $onDownload : 4D:C1709.Function)
 	This:C1470.event:=$event
 	
 	This:C1470.options:=$options#Null:C1517 ? $options : {}
-	This:C1470.options.onTerminate:=This:C1470.event.onTerminate
-	This:C1470.options.onStdErr:=This:C1470.event.onStdErr
-	This:C1470.options.onStdOut:=This:C1470.event.onStdOut
+	If (This:C1470.event#Null:C1517)
+		This:C1470.options.onTerminate:=This:C1470.event.onTerminate
+		This:C1470.options.onStdErr:=This:C1470.event.onStdErr
+		This:C1470.options.onStdOut:=This:C1470.event.onStdOut
+	End if 
 	//%W-550.4
 	If (OB Instance of:C1731(4D:C1709.HTTPAgent; 4D:C1709.Class))
 		This:C1470.agent:=4D:C1709.HTTPAgent.new({keepAlive: False:C215})
